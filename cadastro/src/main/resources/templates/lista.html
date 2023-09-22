@@ -28,28 +28,29 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
-    <table class="table">
-      <caption>Tabela de Cadastros</caption>
+      <table class="table">
+        <caption></caption>
         <thead>
-          
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-          </tr>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th> 
+                <th scope="col">Ações</th>
+            </tr>
         </thead>
         <tbody>
-          <tr th:each="cadastro: ${cadastros}">
-            <td th:text="${cadastro.name}"></td>
-            <td th:text="${cadastro.email}"></td>
-           <td>
-            <a th:href="@{/editar(email=${cadastro.email})}">Editar</a>
-
-            <a th:href="@{/delete(name=${cadastro.name})}">Excluir</a>
-           </td>
-         
+            <tr th:each="cadastro: ${cadastros}">
+                <td th:text="${cadastro.name}"></td>
+                <td th:text="${cadastro.email}"></td>
+                <td th:text="${cadastro.phone}"></td> 
+                <td>
+                    <a th:href="@{/editar(email=${cadastro.email})}" class="btn btn-primary">Editar</a>
+                    <a th:href="@{/delete(name=${cadastro.name})}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
         </tbody>
-      </table>
-
+    </table>
+    
 
 
 </body>

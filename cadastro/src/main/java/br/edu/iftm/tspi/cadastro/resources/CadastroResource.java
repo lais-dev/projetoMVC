@@ -37,6 +37,7 @@ public class CadastroResource {
 
     @RequestMapping("cadastroGet")
     public String doGet(Model model) {
+        model.addAttribute("cadastro", new CadastroDTO());
         model.addAttribute("cadastros", cadastros);
         return "lista";
     }
